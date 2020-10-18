@@ -11,6 +11,10 @@ class UsersController < ApplicationController
     end
   end
 
+  def destory
+    redirect_to new_user_session_path
+  end
+
 
   private
 
