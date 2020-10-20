@@ -152,7 +152,7 @@
 }
 
 .send_btn{
-  
+  width: 60px;
   color: white;
   background-color: #38AEF0;
   font-size: 16px;
@@ -176,5 +176,12 @@
 .input{
   width: 100%;
   display: flex;
+  justify-content: space-between;
   background-color: white;
+}
+
+/*エラーの際に新たに追加される要素だけ非表示にする*/
+/*display: contents;で新規生成された要素のみを非表示に*/
+.field_with_errors{
+  display: contents;
 }
