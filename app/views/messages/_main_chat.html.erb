@@ -1,6 +1,8 @@
 <div class = "chat_header">
   <div class = 'chat_name'>
-    hogafuga
+    <%= @room.name %>
+    <!-- messageモデルの@room = Room.find(params[:room_id])からroom_idのnameを取得-->
+    <!-- @room.nameでroomのnameを表示 -->
   </div>
   <div class = 'chat_end_btn'>
     <a href = '#'>チャットを終了する</a>
