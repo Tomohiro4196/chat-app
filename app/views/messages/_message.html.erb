@@ -1,0 +1,21 @@
+<!-- messageディレクトリ上でしか使わないから"@messageではない" --> 
+ 
+ <div class = "mgs">
+    <div class = "mgs_info">
+      <div class = "post_username">
+        <%= message.user.name%>
+        <!-- messageテーブル上のレコードのuser_idからnameカラムを取得-->
+      </div>
+
+      <div class = "post_date">
+        <%= l message.created_at%>
+        <!-- messageテーブル上のcreated_atを取得-->
+      </div>
+
+    </div>
+
+    <div class = "mgs_contents">
+      <%= message.content%>
+      <!-- messageテーブル上のcontentを取得-->
+    </div>
+ </div>
