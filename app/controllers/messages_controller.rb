@@ -1,8 +1,12 @@
 class MessagesController < ApplicationController
   def index
     @message = Message.new
+    #messageモデルのインスタンス情報を代入
     @room = Room.find(params[:room_id])
     #params内のroom_idを取得
+    @messages = @room.messages.includes(:user)
+    #@room.messages = roomに紐づいているmessage全て -> @messages(複数形)と定義
+    #includesをつけることで大量のアクセスを１度で済ませる(N+1問題の解決)
   end
 
   def create
@@ -13,7 +17,9 @@ class MessagesController < ApplicationController
      if  @message.save
        #saveメソッドで保存→保存できたらメッセージ画面へリダイレクト
         redirect_to room_messages_path(@room.id)
-     else 
+     else
+        @room.messages.includes(:user)
+        #@messagesを定義して、元々あるレコードを次のindexで表示する
         render :index
         #元のページに戻る
      end
