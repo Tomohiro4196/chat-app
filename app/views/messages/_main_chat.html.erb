@@ -39,18 +39,17 @@
 
 </div>
 
-<div class = "new_mg">
-  
-  <div class = "input-mg">
-    <input type = "text" placeholder = "tyep a mesaage" class = "mg">
 
-    <label class = "img_mg">
-      <span class = "img_file">画像</span>
-      <input type = "file" class = "hidden">
-    </label>
-  </div>
-    
-    <input class = "send_btn" type = "submit" value = "送信">
-   
-  
+<div class = new_mg>
+
+  <%= form_with model: [@room, @message], class: 'input-mg', local: true do |f| %>
+    <div class = "input">
+      <%= f.text_field :content, class: "mg", placeholder: "type a message" %>
+      <label class = "img_mg">
+        <span class = img_file>画像</span>
+        <%= f.file_field :image, class: 'hidden' %>
+      </label>
+    </div>
+    <%= f.submit '送信', class: 'send_btn'%>
+  <% end %>
 </div>

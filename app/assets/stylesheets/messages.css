@@ -127,7 +127,6 @@
 .input-mg{
   display: flex;
   width: 100%;
-  background-color: white;
 }
 
 .mg{
@@ -172,4 +171,10 @@
   color: white;
   display: flex;
   align-items: center;
+}
+
+.input{
+  width: 100%;
+  display: flex;
+  background-color: white;
 }
