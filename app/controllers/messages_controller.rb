@@ -30,8 +30,8 @@ class MessagesController < ApplicationController
 
   private
   def message_params
-    params.require(:message).permit(:content).merge(user_id: current_user.id)
-    #contentのみを保存。
+    params.require(:message).permit(:content, :image).merge(user_id: current_user.id)
+    #contentとimageのみを保存。
     #ログインしているユーザーのIDをmergeして、current_user.idのみが紐づいているmessageを受け取る
   end
 end
