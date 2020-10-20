@@ -18,4 +18,7 @@
       <%= message.content%>
       <!-- messageテーブル上のcontentを取得-->
     </div>
+    <%= image_tag message.image.variant(resize: '500x500'), class: 'mg-img' if message.image.attached?%>
+    <!-- if message.image.attached? で画像が存在する場合のみimage_tagを読み込む -> img要素を生成する -->
+    <!-- variantメソッドで500x500にサイズを指定 -->
  </div>
