@@ -1,24 +1,17 @@
-<!-- messageディレクトリ上でしか使わないから"@messageではない" --> 
- 
- <div class = "mgs">
-    <div class = "mgs_info">
-      <div class = "post_username">
+<div class = "mgs">
+  <div class = "mgs_info">
+    <div class = "post_username">
         <%= message.user.name%>
-        <!-- messageテーブル上のレコードのuser_idからnameカラムを取得-->
-      </div>
-
-      <div class = "post_date">
-        <%= l message.created_at%>
-        <!-- messageテーブル上のcreated_atを取得-->
-      </div>
-
     </div>
+    <div class = "post_date">
+        <%= l message.created_at%>
+    </div>
+  </div>
 
+  <div class = "lower_mgs">
     <div class = "mgs_contents">
       <%= message.content%>
-      <!-- messageテーブル上のcontentを取得-->
     </div>
-    <%= image_tag message.image.variant(resize: '500x500'), class: 'mg-img' if message.image.attached?%>
-    <!-- if message.image.attached? で画像が存在する場合のみimage_tagを読み込む -> img要素を生成する -->
-    <!-- variantメソッドで500x500にサイズを指定 -->
- </div>
+    <%= image_tag message.image.variant(resize: '500x500'), class: 'message-image' if message.image.attached? %>
+  </div>
+</div>
