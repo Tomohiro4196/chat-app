@@ -42,3 +42,5 @@ RSpec.describe Message, type: :model do
   end
 
 end
+
+expect(page).to include("AAA")
